@@ -1,0 +1,68 @@
+.combobox > div{
+  position: relative;
+}
+
+.combobox{
+  position: relative;
+  margin-bottom:6px;
+}
+
+.combobox > div:after{
+  position: absolute;
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0dd";
+  top: 50%;
+  transform: translateY(-60%);
+  right: 0px;
+  margin-right:12px;
+}
+
+.combobox input{
+  font-size: 1.25rem;
+  color: black;
+  border:2px solid black;
+  border-radius:4px;
+  padding: 4px;
+  padding-right: 20px;
+  background: none;
+  width: 300px;
+}
+
+.combobox input::placeholder{
+  color:black;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.combobox input:focus{
+  outline:none;
+}
+
+
+.combobox ul{
+  margin:4px 0 0 0;
+  position:absolute;
+  top: 100%;
+  background:black;
+  color:white;
+  border-radius: 4px;
+  list-style:none;
+  width:100%;
+  padding:0;
+  overflow:auto;
+  max-height: 350px;
+}
+
+.combobox ul li{
+  padding:8px 8px;
+  cursor:pointer;
+}
+
+.combobox ul li p{
+  font-size: 12px;
+  font-weight:bold;
+}
+
+.combobox ul li h4{
+  font-weight:normal;
+}
+

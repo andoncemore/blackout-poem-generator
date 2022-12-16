@@ -1,0 +1,211 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+p,h1,h2,h3,h4,h5,span{
+  margin:0;
+  padding:0;
+}
+
+nav{
+  display:flex;
+  height: 20px;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items:center;
+}
+
+
+.Blackout{
+  width: 90%;
+  max-width: 750px;
+  margin: 10px auto 50px auto;
+}
+
+.background{
+  min-height:100vh;
+  transition: background 0.2s ease;
+  overflow: auto;
+}
+
+
+/* Header CSS */
+
+.Blackout header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.Blackout header div{
+  display:flex;
+  align-items:center;
+}
+
+.Blackout header div > *{
+  margin-right:4px;
+}
+
+.Blackout header a{
+  color:black;
+}
+
+/* Toggle  */
+#toggle{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 32px;
+  height:18px;
+  display:inline-block;
+  position:relative;
+  border-radius: 50px;
+/*   overflow: hidden; */
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: black;
+  transition: background color ease 0.3s;
+}
+
+#toggle:before{
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  left: 2px;
+  top:2px;
+  border-radius: 50%;
+  transition: all cubic-bezier(0.3,1.5,0.7,1) 0.3s;
+}
+
+#toggle:checked{
+  background-color: white;
+}
+
+#toggle:checked:before{
+  left:16px;
+  background: black;
+}
+
+#toggle:checked + label{
+  color: white;
+}
+
+#toggle:disabled + label{
+  color:#c4c4c4;
+}
+
+label{
+  color:black;
+}
+
+
+#toggle:disabled{
+  background-color: #c4c4c4;
+  cursor: not-allowed;
+}
+
+#toggle:disabled::after{
+  z-index: 5;
+  display: block;
+  position: absolute;
+  width: 200px;
+  background:black;
+  color:white;
+  top: 20px;
+  left: 50%;  
+  transition: opacity 0.3s ease;
+  opacity:0;
+  pointer-events:none;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  box-sizing:border-box;
+  padding:8px;
+  font-size: 0.875rem;
+  font-weight:bold;
+}
+
+.step1:disabled::after{
+  content:"get started by choosing a statement from the dropdown";
+}
+
+.step2:disabled::after{
+  content:"click on words from the statement below to create blackout poem";
+}
+
+
+#toggle:disabled:hover::after{
+  opacity: 1;
+  pointer-events:auto;
+}
+
+
+/* Main CSS  */
+
+.Blackout main{
+  box-sizing:border-box;
+  padding: 5px;
+}
+
+.Blackout main > p{
+  margin: 12px 0;
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 1.3rem;
+}
+
+.Blackout main > p > span{
+  padding: 0.5px 1.8px;
+/*   margin-right:3.5px; */
+  cursor: pointer;
+  color: black;
+  transition: transform 0.2s ease, background 0.1s ease;
+
+}
+
+.Blackout main.edit > p > span:hover{
+  background: #E2E2E2;
+  border-radius: 2px;
+/*   transition: background 0.1s ease; */
+}
+
+.Blackout main.edit > p > span.select:hover{
+  background:black;
+}
+
+
+
+.Blackout main > p > span.select{
+  background: black;
+  color:white;
+}
+
+
+.Blackout main.preview > p > span.select {
+  background:white;
+  color:black;
+/*   transform: scale(1.2); */
+  
+}
+
+.Blackout main.preview > p > span {
+  color:#0A0A0A;
+}
+
+
